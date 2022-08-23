@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('Hi')
 
     // TODO: Add event listener and handler for flip and clear buttons
+    
 
     // Flip Button Click Handler
         // TODO: Determine flip outcome
