@@ -28,12 +28,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let flipValue = Math.ceil(Math.random() * 2);
         if(flipValue == 1) {
-            coin.src="/assets/images/penny-heads.jpg";
+            coin.src="assets/images/penny-heads.jpg";
             headNumber = headNumber + 1;
             coinMessage.textContent = "You Flipped Heads!"
             
             } else {
-                coin.src="/assets/images/penny-tails.jpg";
+                coin.src="assets/images/penny-tails.jpg";
                 tailNumber = tailNumber + 1;
                 coinMessage.textContent = "You Flipped Tails!"
             } 
