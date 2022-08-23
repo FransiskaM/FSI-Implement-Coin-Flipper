@@ -6,11 +6,26 @@ document.addEventListener('DOMContentLoaded', function () {
     // You can remove it once you see it in your browser console in the developer tools
     console.log('Hi')
 
-    // TODO: Add event listener and handler for flip and clear buttons
-    
+    let change  = document.getElementById ("flip-coin");
 
+    let coin  = document.getElementById ("heads");
+
+    //DO NOT CHANGE THE FOLLOWING CODE
+    change.addEventListener("click", function() {
+        let flipValue = Math.ceil(Math.random() * 2);
+        if(flipValue == 1) {
+            coin.src="/assets/images/penny-heads.jpg";
+            } else {
+                coin.src="/assets/images/penny-tails.jpg";
+            } 
+       
+    });
+
+    
+    
     // Flip Button Click Handler
         // TODO: Determine flip outcome
+
         // TODO: Update image and status message in the DOM
 
         // Update the scorboard
