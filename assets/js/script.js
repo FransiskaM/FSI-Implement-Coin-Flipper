@@ -1,5 +1,9 @@
 // TODO: Declare any global variables we need
 
+let headNumber = 0;
+let tailNumber = 0;
+let headPercentNumber = 0;
+let tailPercentNumber = 0;
 
 document.addEventListener('DOMContentLoaded', function () {
     // This is just a sanity check to make sure your JavaScript script is getting loaded
@@ -8,20 +12,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let change  = document.getElementById ("flip-coin");
 
-    let coin  = document.getElementById ("heads");
+    let coin  = document.getElementById ("coinImg");
+
+    let heads = document.getElementById ('heads');
+    let tails = document.getElementById ("tails");
+    let headPercent = document.getElementById ("heads-percent");
+    let tailPercent = document.getElementById ("tails-percent");
 
     //DO NOT CHANGE THE FOLLOWING CODE
     change.addEventListener("click", function() {
+
         let flipValue = Math.ceil(Math.random() * 2);
         if(flipValue == 1) {
             coin.src="/assets/images/penny-heads.jpg";
+            headNumber = headNumber + 1;
+            
             } else {
                 coin.src="/assets/images/penny-tails.jpg";
+                tailNumber = tailNumber + 1;
+                
             } 
-       
+            headPercentNumber = ((headNumber/(headNumber + tailNumber))*100).toFixed();
+            tailPercentNumber = ((tailNumber/(headNumber + tailNumber))*100).toFixed();
+
+        heads.innerHTML = headNumber;    
+        tails.innerHTML = tailNumber;
+        headPercent.innerHTML = headPercentNumber + '%';
+        tailPercent.innerHTML = tailPercentNumber + '%';
     });
 
-    
     
     // Flip Button Click Handler
         // TODO: Determine flip outcome
