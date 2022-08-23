@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let change  = document.getElementById ("flip-coin");
 
+    let clearBoard  = document.getElementById ("clear");
+
     let coin  = document.getElementById ("coinImg");
 
     let heads = document.getElementById ('heads');
@@ -41,6 +43,20 @@ document.addEventListener('DOMContentLoaded', function () {
         tailPercent.innerHTML = tailPercentNumber + '%';
     });
 
+    clearBoard.addEventListener("click", function() {
+
+        headNumber = 0;
+        tailNumber = 0;
+        headPercentNumber = 0;
+        tailPercentNumber = 0;
+
+        heads.innerHTML = headNumber;    
+        tails.innerHTML = tailNumber;
+        headPercent.innerHTML = headPercentNumber + '%';
+        tailPercent.innerHTML = tailPercentNumber + '%'; 
+
+    });
+    
     
     // Flip Button Click Handler
         // TODO: Determine flip outcome
