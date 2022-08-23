@@ -10,11 +10,13 @@ document.addEventListener('DOMContentLoaded', function () {
     // You can remove it once you see it in your browser console in the developer tools
     console.log('Hi')
 
-    let change  = document.getElementById ("flip-coin");
+    let change  = document.getElementById ("flip");
 
     let clearBoard  = document.getElementById ("clear");
 
     let coin  = document.getElementById ("coinImg");
+
+    let coinMessage  = document.getElementById ("message");
 
     let heads = document.getElementById ('heads');
     let tails = document.getElementById ("tails");
@@ -28,11 +30,12 @@ document.addEventListener('DOMContentLoaded', function () {
         if(flipValue == 1) {
             coin.src="/assets/images/penny-heads.jpg";
             headNumber = headNumber + 1;
+            coinMessage.textContent = "You Flipped Heads!"
             
             } else {
                 coin.src="/assets/images/penny-tails.jpg";
                 tailNumber = tailNumber + 1;
-                
+                coinMessage.textContent = "You Flipped Tails!"
             } 
             headPercentNumber = ((headNumber/(headNumber + tailNumber))*100).toFixed();
             tailPercentNumber = ((tailNumber/(headNumber + tailNumber))*100).toFixed();
@@ -50,10 +53,15 @@ document.addEventListener('DOMContentLoaded', function () {
         headPercentNumber = 0;
         tailPercentNumber = 0;
 
+        document.getElementById('message').textContent = 'Let\'s Get Rolling!'
+
+
         heads.innerHTML = headNumber;    
         tails.innerHTML = tailNumber;
         headPercent.innerHTML = headPercentNumber + '%';
         tailPercent.innerHTML = tailPercentNumber + '%'; 
+
+        
 
     });
     
@@ -64,10 +72,13 @@ document.addEventListener('DOMContentLoaded', function () {
         // TODO: Update image and status message in the DOM
 
         // Update the scorboard
+
         // TODO: Calculate the total number of rolls/flips
+
         // Make variables to track the percentages of heads and tails
         // TODO: Use the calculated total to calculate the percentages
         // HINT: Make sure not to divide by 0! (if total is 0, percent will be 0 as well)
+
         // TODO: Update the display of each table cell
 
 
